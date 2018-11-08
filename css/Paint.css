@@ -1,5 +1,38 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
-    text-align: center;
     margin-top: 50px;
+}
+
+.sidebar {
+    top: 0;
+    left: 0;
+    width: 300px;
+    position: absolute;
+    height: 100vh;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar button {
+    color: black;
+    background-color: white;
+    font-size: 30px;
+    margin: 10px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.canvas-container {
+    text-align: center;
+}
+
+.canvas {
+    height: 500px;
+    width: 500px;
+    background-color: black;
+    margin: auto;
 }
