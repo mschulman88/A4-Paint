@@ -1,12 +1,13 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
     margin-top: 50px;
+    background-color: lightblue;
 }
 
 .sidebar {
     top: 0;
     left: 0;
-    width: 300px;
+    width: 250px;
     position: absolute;
     height: 100vh;
     background-color: lightgray;
@@ -15,24 +16,41 @@ body {
 
 .sidebar ul {
     list-style: none;
+    padding-left: 0;
 }
 
 .sidebar button {
     color: black;
     background-color: white;
-    font-size: 30px;
+    font-size: 20px;
     margin: 10px;
     width: 200px;
     cursor: pointer;
+    border: 5px solid black;
+}
+
+.sidebar button.selected {
+    border: 5px solid red;
 }
 
 .canvas-container {
     text-align: center;
+    margin-left: 250px;
+    background-color: lightcyan;
 }
 
 .canvas {
-    height: 500px;
-    width: 500px;
-    background-color: black;
+    height: 600px;
+    width: 600px;
+    background-color: white;
+    border: 2px solid black;
     margin: auto;
+}
+
+#canvas {
+    position: relative;
+}
+
+#canvas img {
+    position: absolute;
 }
