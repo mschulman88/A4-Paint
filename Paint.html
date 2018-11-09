@@ -24,7 +24,15 @@
                 <li><button id="save">Save Canvas</button></li>
                 <li><button id="load">Load Canvas</button></li>
             </ul>
-            <h3>Brush Options</h3>
+            <h3>Canvas Options</h3>
+            <input type="number" value="Canvas Size (px)">
+            <button id="size">Update Canvas</button>
+            <h3>Shape Options</h3>
+            <ul>
+                <li><button id="square">Square</button></li>
+                <li><button id="rectangle">Rectangle</button></li>
+            </ul>
+            <h3>Color Options</h3>
             <ul id="palette">
 
             </ul>
@@ -32,6 +40,7 @@
 
         <!-- Canvas Wrapper -->
         <div class="canvas-container">
+            <h2 id="canvas-title"></h2>
             <div class="canvas" id="canvas"></div>
         </div>
 

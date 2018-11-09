@@ -4,7 +4,7 @@ Paint.selectedColor;
 
 Paint.start = function(){
     Paint.bindMenuActions();
-    Paint.generateDynamicToppings();
+    Paint.generateDynamicColors();
     Paint.bindColorClick();
 };
 
@@ -17,7 +17,7 @@ Paint.bindMenuActions = function(){
     loadBtn.addEventListener("click", Paint.load);
 };
 
-Paint.generateDynamicToppings = function(){
+Paint.generateDynamicColors = function(){
     var palette = document.getElementById("palette");
     for (var i = 0; i < Paint.colors.length ; i++){
         var buttonItem =  document.createElement("li"); 
@@ -59,17 +59,19 @@ Paint.placeColors = function(e){
     }
 };
 
-// Paint.placeColor = function(src, top, left){
-//     var canvas = document.getElementById("canvas");
-//     var colorImg = document.createElement("img"); 
-//     colorImg.src = src;
-//     colorImg.style.top = top;
-//     colorImg.style.left = left;
-//     canvas.appendChild(colorImg);
-// }
-
 Paint.new = function(){
-    alert("new");
+    var canvasName = prompt("What is the name of your masterpiece?");
+    var canvasTitle = document.getElementById("canvas-title");
+    canvasTitle.innerHTML = canvasName;
+    Paint.clear();
+};
+
+Paint.clear = function(){
+    var canvas = document.getElementById("canvas");
+    var allColors = canvas.getElementsByTagName('img');
+    while (allColors.length > 0){
+        canvas.removeChild(allColors[0]);
+    }
 };
 
 Paint.save = function(){
