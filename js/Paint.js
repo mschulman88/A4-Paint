@@ -1,5 +1,5 @@
 var Paint = {};
-Paint.colors = ["Black", "Red", "Green", "Blue", "Erase"];
+Paint.colors = ["Black", "Red", "Green", "Blue", "Yellow", "Erase"];
 Paint.selectedColor = "Black";
 
 Paint.start = function(){

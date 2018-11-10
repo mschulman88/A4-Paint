@@ -65,6 +65,10 @@ body {
     color: white;
 }
 
+#Yellow {
+    background-color: yellow;
+}
+
 .canvas-container {
     text-align: center;
     margin-left: 250px;
