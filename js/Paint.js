@@ -1,11 +1,12 @@
 var Paint = {};
 Paint.colors = ["Black", "Red", "Green", "Blue", "White"];
-Paint.selectedColor;
+Paint.selectedColor; // ADD A DEFAULT COLOR!!!!!!!!!!!!!!!!!!!!!!
 
 Paint.start = function(){
     Paint.bindMenuActions();
     Paint.generateDynamicColors();
     Paint.bindColorClick();
+    Paint.bindCanvasSize();
 };
 
 Paint.bindMenuActions = function(){
@@ -16,6 +17,17 @@ Paint.bindMenuActions = function(){
     var loadBtn = document.getElementById("load");
     loadBtn.addEventListener("click", Paint.load);
 };
+
+Paint.bindCanvasSize = function(){
+    var size = document.getElementById("size");
+    size.addEventListener("click",Paint.canvasSize);
+};
+
+Paint.canvasSize = function(){
+    var canvas = document.getElementById("canvas");
+    canvas.setAttribute("class", "small-canvas");
+}
+
 
 Paint.generateDynamicColors = function(){
     var palette = document.getElementById("palette");
@@ -44,7 +56,6 @@ Paint.bindColorClick = function(){
     var canvas = document.getElementById("canvas");
     canvas.addEventListener("click",Paint.placeColors);
 };
-
 
 Paint.placeColors = function(e){
     var canvas = document.getElementById("canvas");

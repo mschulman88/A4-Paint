@@ -47,10 +47,24 @@ body {
     margin: auto;
 }
 
+.small-canvas {
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    border: 2px solid black;
+    margin: auto;
+}
+
 #canvas {
     position: relative;
 }
 
 #canvas img {
     position: absolute;
+}
+
+.box {
+    height: 50px;
+    width: 50px;
+    background-color: orange;
 }
