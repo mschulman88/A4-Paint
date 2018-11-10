@@ -1,7 +1,8 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
-    margin-top: 50px;
-    background-color: lightblue;
+    background-image: url("../img/background-namek.jpg");
+    background-size: cover;
+    background-repeat: none;
 }
 
 .sidebar {
@@ -10,7 +11,7 @@ body {
     width: 250px;
     position: absolute;
     height: 100vh;
-    background-color: lightgray;
+    background-color: lightgreen;
     text-align: center;
 }
 
@@ -36,7 +37,6 @@ body {
 .canvas-container {
     text-align: center;
     margin-left: 250px;
-    background-color: lightcyan;
 }
 
 .canvas {
@@ -45,11 +45,28 @@ body {
     background-color: white;
     border: 2px solid black;
     margin: auto;
+    display: none;
 }
 
 .small-canvas {
     height: 300px;
     width: 300px;
+    background-color: white;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.medium-canvas {
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.large-canvas {
+    height: 700px;
+    width: 700px;
     background-color: white;
     border: 2px solid black;
     margin: auto;

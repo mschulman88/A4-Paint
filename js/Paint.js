@@ -19,15 +19,28 @@ Paint.bindMenuActions = function(){
 };
 
 Paint.bindCanvasSize = function(){
-    var size = document.getElementById("size");
-    size.addEventListener("click",Paint.canvasSize);
+    var size = document.getElementById("small");
+    size.addEventListener("click",Paint.canvasSmall);
+    var size = document.getElementById("medium");
+    size.addEventListener("click",Paint.canvasMedium);
+    var size = document.getElementById("large");
+    size.addEventListener("click",Paint.canvasLarge);
 };
 
-Paint.canvasSize = function(){
+Paint.canvasSmall = function(){
     var canvas = document.getElementById("canvas");
     canvas.setAttribute("class", "small-canvas");
 }
 
+Paint.canvasMedium = function(){
+    var canvas = document.getElementById("canvas");
+    canvas.setAttribute("class", "medium-canvas");
+}
+
+Paint.canvasLarge = function(){
+    var canvas = document.getElementById("canvas");
+    canvas.setAttribute("class", "large-canvas");
+}
 
 Paint.generateDynamicColors = function(){
     var palette = document.getElementById("palette");
@@ -35,8 +48,6 @@ Paint.generateDynamicColors = function(){
         var buttonItem =  document.createElement("li"); 
         var newButton = document.createElement("button"); 
         var buttonLabel = document.createTextNode(Paint.colors[i]);
-        // newButton.style.backgroundImage = "url(./images/" + Pizza.toppings[i] + ".jpg)";
-        // newButton.className = "cover-bg toppings-btn";
         newButton.id = Paint.colors[i];
         buttonItem.appendChild(newButton);
         newButton.appendChild(buttonLabel);
@@ -75,7 +86,13 @@ Paint.new = function(){
     var canvasTitle = document.getElementById("canvas-title");
     canvasTitle.innerHTML = canvasName;
     Paint.clear();
+    Paint.show();
 };
+
+Paint.show = function (){
+    var canvas = document.getElementById("canvas");
+    canvas.style.display = "block";
+}
 
 Paint.clear = function(){
     var canvas = document.getElementById("canvas");
