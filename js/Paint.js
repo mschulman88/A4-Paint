@@ -12,6 +12,8 @@ Paint.start = function(){
 Paint.bindMenuActions = function(){
     var newBtn = document.getElementById("new");
     newBtn.addEventListener("click", Paint.new);
+    var clearBtn = document.getElementById("clear");
+    clearBtn.addEventListener("click", Paint.clear);
     var saveBtn = document.getElementById("save");
     saveBtn.addEventListener("click", Paint.save);
     var loadBtn = document.getElementById("load");
@@ -134,7 +136,7 @@ Paint.save = function(){
         strokeObj["img"] = currentStroke.src;
         strokeObj["top"] = currentStroke.getBoundingClientRect().top - canvasTop;
         strokeObj["left"] = currentStroke.getBoundingClientRect().left - canvasLeft;
-        canvasObj["toppings"].push(strokeObj);
+        canvasObj["strokes"].push(strokeObj);
     }
     localStorage.setItem('painting', JSON.stringify(canvasObj));
     alert("Painting Saved");
