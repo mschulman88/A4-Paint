@@ -1,6 +1,6 @@
 body {
     font-family: Helvetica, Arial, sans-serif;
-    background-image: url("../img/background-namek.jpg");
+    background-image: url("https://cdn.hipwallpaper.com/i/11/92/Oj1bUh.jpg");
     background-size: cover;
     background-repeat: none;
 }
@@ -27,11 +27,11 @@ body {
     margin: 10px;
     width: 200px;
     cursor: pointer;
-    border: 5px solid black;
+    border: 5px solid gray;
 }
 
 .sidebar button.selected {
-    border: 5px solid red;
+    border: 5px solid black;
 }
 
 .canvas-container {
