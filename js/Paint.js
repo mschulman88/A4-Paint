@@ -121,6 +121,7 @@ Paint.new = function(){
 Paint.show = function (){
     var canvas = document.getElementById("canvas");
     canvas.style.display = "block";
+    canvas.setAttribute("class", "medium-canvas");
 }
 
 Paint.clear = function(){

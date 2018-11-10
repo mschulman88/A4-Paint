@@ -38,6 +38,7 @@ body {
     width: 200px;
     padding: 5px;
     cursor: pointer;
+    border-radius: 30%;
 }
 
 .sidebar button.selected {
@@ -73,7 +74,6 @@ body {
     text-align: center;
     margin-left: 250px;
 }
-
 
 .small-canvas {
     height: 300px;
