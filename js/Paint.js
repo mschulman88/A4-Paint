@@ -1,6 +1,6 @@
 var Paint = {};
 Paint.colors = ["Black", "Red", "Green", "Blue", "White"];
-Paint.selectedColor; // ADD A DEFAULT COLOR!!!!!!!!!!!!!!!!!!!!!!
+Paint.selectedColor = "Black";
 
 Paint.start = function(){
     Paint.bindMenuActions();
@@ -27,6 +27,11 @@ Paint.bindCanvasSize = function(){
     size.addEventListener("click",Paint.canvasLarge);
 };
 
+// Paint.showModal = function(title, message){
+//     var modalWrapper = document.getElementById("modal-wrapper");
+//     modalWrapper.style.display = "block";
+// };
+
 Paint.canvasSmall = function(){
     var canvas = document.getElementById("canvas");
     canvas.setAttribute("class", "small-canvas");
@@ -49,6 +54,7 @@ Paint.generateDynamicColors = function(){
         var newButton = document.createElement("button"); 
         var buttonLabel = document.createTextNode(Paint.colors[i]);
         newButton.id = Paint.colors[i];
+        newButton.className = "buttonColors";
         buttonItem.appendChild(newButton);
         newButton.appendChild(buttonLabel);
         palette.appendChild(buttonItem);
@@ -89,6 +95,18 @@ Paint.new = function(){
     Paint.show();
 };
 
+// Paint.showModal = function(){
+//     var modalWrapper = document.getElementById("modal-wrapper");
+//     var modalOK = document.getElementById("modal-ok");
+//     modalWrapper.style.display = "block";
+//     var canvasName = document.getElementById("canvas-name").value;
+//     var canvasTitle = document.getElementById("canvas-title");
+//     canvasTitle.innerHTML = canvasName;
+//     modalOK.addEventListener("click", function(){
+//         modalWrapper.style.display = "none"
+//     });
+//     Paint.show();
+
 Paint.show = function (){
     var canvas = document.getElementById("canvas");
     canvas.style.display = "block";
@@ -103,11 +121,40 @@ Paint.clear = function(){
 };
 
 Paint.save = function(){
-    alert("save");
+    var canvas = document.getElementById("canvas");
+    var canvasLeft = canvas.getBoundingClientRect().left;
+    var canvasTop =  canvas.getBoundingClientRect().top;
+    var canvasObj = {};
+    canvasObj["name"] = document.getElementById("canvas-title").innerHTML;
+    canvasObj["strokes"] = [];
+    var allStrokes = canvas.getElementsByTagName('img');
+    for (var i = 0; i < allStrokes.length ; i++) {
+        var currentStroke = allStrokes[i];
+        var strokeObj = {};
+        strokeObj["img"] = currentStroke.src;
+        strokeObj["top"] = currentStroke.getBoundingClientRect().top - canvasTop;
+        strokeObj["left"] = currentStroke.getBoundingClientRect().left - canvasLeft;
+        canvasObj["toppings"].push(strokeObj);
+    }
+    localStorage.setItem('painting', JSON.stringify(canvasObj));
+    alert("Painting Saved");
 };
 
 Paint.load = function(){
-    alert("load");
+    var loadedPainting = localStorage.getItem('painting');
+    var canvasObj = JSON.parse(loadedPainting);
+    Paint.clear();
+    var canvasTitle = document.getElementById("canvas-title");
+    canvasTitle.innerHTML = canvasObj["name"];
+    var allStrokes = canvasObj["strokes"];
+    for (var i = 0; i < allStrokes.length ; i++) {
+        var currentStroke = allStrokes[i];
+        Paint.placeColors(currentStroke["img"], 
+                            currentStroke["top"] + "px", 
+                            currentStroke["left"] + "px");
+    }
+    Paint.show();
+    alert("Painting Loaded");
 };
 
 Paint.start();

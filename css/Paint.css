@@ -20,18 +20,49 @@ body {
     padding-left: 0;
 }
 
-.sidebar button {
+.sidebar .menu {
     color: black;
     background-color: white;
     font-size: 16px;
     margin: 10px;
     width: 200px;
     cursor: pointer;
-    border: 5px solid gray;
+    border: 5px solid black;
+}
+
+.buttonColors {
+    color: black;
+    background-color: white;
+    font-size: 16px;
+    margin: 10px;
+    width: 200px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 .sidebar button.selected {
     border: 5px solid black;
+    box-shadow: 5px 5px 2.5px black;
+}
+
+#Black {
+    background-color: black;
+    color: white;
+}
+
+#Red {
+    background-color: red;
+    color: white;
+}
+
+#Green {
+    background-color: green;
+    color: white;
+}
+
+#Blue {
+    background-color: blue;
+    color: white;
 }
 
 .canvas-container {
@@ -39,14 +70,6 @@ body {
     margin-left: 250px;
 }
 
-.canvas {
-    height: 600px;
-    width: 600px;
-    background-color: white;
-    border: 2px solid black;
-    margin: auto;
-    display: none;
-}
 
 .small-canvas {
     height: 300px;
@@ -80,8 +103,37 @@ body {
     position: absolute;
 }
 
-.box {
-    height: 50px;
-    width: 50px;
-    background-color: orange;
+#modal-wrapper{
+    position:fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-color:rgba(0,0,0,0.5);
+    z-index:12345;
+}
+
+#modal-wrapper .modal-title{
+    font-family: 'Helvetica', cursive;
+    font-size:40px;
+    color:green;
+}
+
+#modal-wrapper .modal{
+    background-color: white;
+    min-width: 200px;
+    min-height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 40px;
+    border-radius: 5px;
+}
+
+#modal-wrapper .close-btn{
+    position:absolute;
+    right:10px;
+    top:10px;
+    color:black;
 }
