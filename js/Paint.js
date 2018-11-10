@@ -1,5 +1,5 @@
 var Paint = {};
-Paint.colors = ["Black", "Red", "Green", "Blue", "White"];
+Paint.colors = ["Black", "Red", "Green", "Blue", "Erase"];
 Paint.selectedColor = "Black";
 
 Paint.start = function(){
@@ -48,6 +48,15 @@ Paint.canvasLarge = function(){
     var canvas = document.getElementById("canvas");
     canvas.setAttribute("class", "large-canvas");
 }
+
+Paint.rotate = function(value){
+    document.getElementById('canvas').style.webkitTransform="rotate(" + value + "deg)";
+    document.getElementById('canvas').style.msTransform="rotate(" + value + "deg)";
+    document.getElementById('canvas').style.MozTransform="rotate(" + value + "deg)";
+    document.getElementById('canvas').style.OTransform="rotate(" + value + "deg)";
+    document.getElementById('canvas').style.transform="rotate(" + value + "deg)";
+    document.getElementById('rotate').innerHTML=value + "°";
+};
 
 Paint.generateDynamicColors = function(){
     var palette = document.getElementById("palette");

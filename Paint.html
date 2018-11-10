@@ -25,14 +25,15 @@
                 <li><button class="menu" id="save">Save Canvas</button></li>
                 <li><button class="menu" id="load">Load Canvas</button></li>
             </ul>
-            <h3>Canvas Options</h3>
+            <h3>Canvas Size</h3>
             <button id="small">Small</button>
             <button id="medium">Medium</button>
             <button id="large">Large</button>
+            <h3>Rotate Canvas</h3>
+            <input type="range" min="-180" max="180" value="0" oninput="Paint.rotate(this.value)" onchange="Paint.rotate(this.value)"/><br>
+            Transform:(<span id="rotate">0°</span>)
             <h3>Color Options</h3>
-            <ul id="palette">
-
-            </ul>
+            <ul id="palette"></ul>
         </div>
 
         <!-- Canvas Wrapper -->
@@ -50,8 +51,6 @@
             </div>
         </div>
 
-
-        
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
