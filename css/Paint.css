@@ -78,6 +78,7 @@ p {
 .canvas-container {
     text-align: center;
     margin-left: 250px;
+    overflow: hidden;
 }
 
 .small-canvas {
@@ -106,6 +107,7 @@ p {
 
 #canvas {
     position: relative;
+    overflow: hidden;
 }
 
 #canvas img {

@@ -82,19 +82,17 @@ Paint.generateDynamicColors = function(){
 
 Paint.bindColorClick = function(){
     var canvas = document.getElementById("canvas");
-    canvas.addEventListener("click",Paint.placeColors);
+    canvas.addEventListener("mousemove", Paint.placeColors);
 };
 
 Paint.placeColors = function(e){
     var canvas = document.getElementById("canvas");
-    if (Paint.selectedColor != undefined){
+    if (e.buttons == 1 && Paint.selectedColor != undefined){
         var colorImg = document.createElement("img");
         colorImg.src = "./img/" + Paint.selectedColor + ".png";
         canvas.appendChild(colorImg);
         colorImg.style.top = e.pageY - e.target.offsetTop + "px";
         colorImg.style.left = e.pageX - e.target.offsetLeft + "px";
-    }else{
-        alert("Please select a color!")
     }
 };
 
